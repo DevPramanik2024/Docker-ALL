@@ -1,0 +1,112 @@
+#this is for docker volumes and scaling
+
+#version: "3.9"
+
+#services:
+ # app1:
+  #  image: devkumar87/devdocker-image:latest
+   # container_name: app1
+    #ports:
+     # - "8081:8080"
+    #volumes:
+     # - spring_logs:/app/logs
+    #restart: always
+
+  #app2:
+   # image: devkumar87/devdocker-image:latest
+    #container_name: app2
+    #ports:
+     # - "8082:8080"
+    #volumes:
+     # - spring_logs:/app/logs
+    #restart: always
+
+  #app3:
+   # image: devkumar87/devdocker-image:latest
+    #container_name: app3
+    #ports:
+     # - "8083:8080"
+    #volumes:
+     # - spring_logs:/app/logs
+    #restart: always
+
+#volumes:
+ # spring_logs:
+
+#COMMANDS		
+#docker-compose up -d --build
+
+
+
+
+
+
+#this is for docker volumes
+     
+#version: '3.8'
+
+#services:
+ # app:
+  #  image: devkumar87/devdocker-image:latest
+   # ports:
+    #  - "8080:8080"
+    #volumes:
+     # - spring_logs:/app/logs
+
+#volumes:
+ # spring_logs:
+
+#COMMANDS
+#docker volume create mydata
+#docker run -d -v mydata:/data busybox
+#docker volume ls
+#docker volume inspect spring_logs
+
+#FOR REMOVE LAST CREATED
+#docker-compose down --volumes --remove-orphans
+#docker image prune -f
+#docker-compose up --build -d
+
+
+
+
+
+
+# this is for run single app in different ports
+#version: "3.8"
+
+#services:
+ # app1:
+  #  image: devkumar87/devdocker-image:latest
+   # ports:
+    #  - "8081:8080"
+
+  #app2:
+   # image: devkumar87/devdocker-image:latest
+    #ports:
+     # - "8082:8080"
+
+  #app3:
+   # image: devkumar87/devdocker-image:latest
+    #ports:
+     # - "8083:8080"
+
+#COMMANDS
+#docker-compose up -d
+
+
+
+
+
+
+
+
+#this is for single app run in single port
+
+version: "3.8"
+
+services:
+  app:
+    image: devkumar87/devdocker-image:latest
+    ports:
+      - "8080:8080"
